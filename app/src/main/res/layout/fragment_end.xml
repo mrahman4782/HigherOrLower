@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#A8515157"
+             android:id="@+id/frag"
+             tools:context=".instructionFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <TextView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:id="@+id/tvContainer"
+
+                android:background="@drawable/box4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginBottom="200dp"
+                android:layout_centerInParent="true" />
+        <TextView
+                android:id="@+id/insTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="220dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Incorrect"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="#0B0B0B"
+                android:textSize="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="60dp"
+        />
+        <TextView
+                android:id="@+id/insText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/insTitle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="You failed"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="#0B0B0B"
+                android:textSize="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="80dp"
+        />
+        <Button
+                android:id="@+id/okButton"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/insText"
+                android:backgroundTint="#000000"
+                android:text="O K"
+                android:textSize="14dp"
+                android:onClick="closeExit"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="190dp"
+                android:bottomRightRadius="10dp"
+                android:bottomLeftRadius="10dp"
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp"/>
+
+
+    </RelativeLayout>
+</FrameLayout>
