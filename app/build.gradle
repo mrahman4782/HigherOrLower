@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 30
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -20,7 +20,7 @@ android {
     defaultConfig {
         applicationId "com.example.finalproject"
         minSdk 21
-        targetSdk 32
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 

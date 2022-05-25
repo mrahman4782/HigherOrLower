@@ -24,6 +24,8 @@ public class GameActivity extends AppCompatActivity {
     public String type;
     public String beforeData = "";
     public String afterData = "";
+
+    public String globalScore = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
         TextView name = (TextView) findViewById(R.id.mode);
         TextView verb1 = (TextView) findViewById(R.id.verb1);
         TextView verb2 = (TextView) findViewById(R.id.verb2);
+
         type = passed;
         switch (passed) {
             case "Networth":
@@ -91,14 +94,16 @@ public class GameActivity extends AppCompatActivity {
     }
     public void processUserChoice(Boolean result){
         if(result == false){
+
             System.out.println("Failed");
             A = new Data("",0.0,"");
             B = new Data("",0.0,"");
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frag, new endFragment());
+            fragmentTransaction.replace(R.id.frag, new endFragment(globalScore));
             fragmentTransaction.commit();
             fragmentTransaction.addToBackStack(null);
+
         }else{
             A = B;
             B = game.getComparingData(A);
@@ -124,6 +129,7 @@ public class GameActivity extends AppCompatActivity {
         if(A.getName()!="" && B.getName() !="") {
             TextView scoreView = (TextView) findViewById(R.id.score);
             scoreView.setText("Score: " + game.getScore().toString());
+            globalScore = game.getScore().toString();
 
             TextView name1 = (TextView) findViewById(R.id.name1);
             name1.setText(A.getName());
@@ -159,8 +165,10 @@ public class GameActivity extends AppCompatActivity {
 
     public void closeExit(View view){
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentManager.popBackStack();
+        Intent intent = new Intent(this, ModeActivity.class);
+        startActivity(intent);
+
     }
 
 
